@@ -1,0 +1,4 @@
+*.txt
+
+# Project exclude paths
+/venv/
