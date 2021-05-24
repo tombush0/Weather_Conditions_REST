@@ -1,16 +1,13 @@
-import time
-from datetime import timedelta
-from statistics import mean, stdev, StatisticsError
-
+from statistics import mean
 
 def get_storm_glass_summary(results):
     summary = dict()
 
-    statistics = ["airTemperature", "cloudCover", "windSpeed", "humidity",
-                  "gust", "pressure", "visibility", "precipitation"]
+    conditions = ["airTemperature", "cloudCover", "windSpeed", "humidity",
+                  "gust", "pressure", "visibility", "precipitation", "waterTemperature"]
 
-    for statistic in statistics:
-        values = [result[statistic] for result in results]
+    for condition in conditions:
+        values = [result[condition] for result in results]
         avg = mean([value["avg"] for value in values])
         minimum = min([value["min"] for value in values])
         maximum = max([value["max"] for value in values])
@@ -20,12 +17,14 @@ def get_storm_glass_summary(results):
                   "max": round(maximum, 2),
                   "stdev": round(dev, 2)}
 
-        if statistic == "airTemperature":
-            summary["temperature"] = result
-        elif statistic == "gust":
-            summary["windGust"] = result
-        else:
-            summary[statistic] = result
+        summary[condition] = result
+
+        # if condition == "airTemperature":
+        #     summary["temperature"] = result
+        # elif condition == "gust":
+        #     summary["windGust"] = result
+        # else:
+        #     summary[condition] = result
 
     return summary
 

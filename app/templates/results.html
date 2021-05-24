@@ -12,16 +12,66 @@
     <br><br><br>
 
     <h3>Temperature</h3>
+
     Unit: Celsius degrees<br><br>
 
-    Min: {{ storm_glass_summary.temperature.min }} <br><br>
+    <h4>Air</h4>
 
-    Max: {{ storm_glass_summary.temperature.max }} <br><br>
+    Min: {{ storm_glass_summary.airTemperature.min }} <br>
 
-    Average: {{ storm_glass_summary.temperature.avg }} <br><br>
+    Max: {{ storm_glass_summary.airTemperature.max }} <br>
 
-    Standard deviation: {{ storm_glass_summary.temperature.stdev }} 
+    Average: {{ storm_glass_summary.airTemperature.avg }} <br>
+
+    Standard deviation: {{ storm_glass_summary.airTemperature.stdev }}
+    <br><br>
+
+    <h4>Water</h4>
+
+    Min: {{ storm_glass_summary.waterTemperature.min }} <br>
+
+    Max: {{ storm_glass_summary.waterTemperature.max }} <br>
+
+    Average: {{ storm_glass_summary.waterTemperature.avg }} <br>
+
+    Standard deviation: {{ storm_glass_summary.waterTemperature.stdev }}
     <br><br><br>
+
+
+    <h3>Wind</h3>
+    Unit: m/s<br><br>
+
+    Speed min: {{ storm_glass_summary.windSpeed.min }} <br>
+
+{#    Gust min: {{ storm_glass_summary.gust.min }} <br><br>#}
+
+    Speed max: {{ storm_glass_summary.windSpeed.max }} <br>
+
+    Speed average: {{ storm_glass_summary.windSpeed.avg }} <br>
+
+    Speed standard deviation:
+    {{ storm_glass_summary.windSpeed.stdev }} <br><br>
+
+    Gust max:  {{ storm_glass_summary.gust.max }} <br>
+
+    Gust average: {{ storm_glass_summary.gust.avg }} <br>
+
+    Gust standard deviation:
+    {{ storm_glass_summary.gust.stdev }} <br><br><br>
+
+    <h3>Visibility</h3>
+    Unit: kilometers<br><br>
+
+    Min: {{ storm_glass_summary.visibility.min }} <br>
+
+    Max: {{ storm_glass_summary.visibility.max }} <br>
+
+    Average: {{ storm_glass_summary.visibility.avg }} <br>
+
+    Standard deviation:
+        {{ storm_glass_summary.visibility.stdev }} <br><br><br>
+
+     <h3><strong>---------------------------------------</strong></h3>
 
     <h3>Cloud cover</h3>
     Unit: percentage<br><br>
@@ -44,7 +94,7 @@
 
     Average: {{ storm_glass_summary.precipitation.avg }} <br><br>
 
-    Standard deviation: {{ storm_glass_summary.precipitation.stdev }} 
+    Standard deviation: {{ storm_glass_summary.precipitation.stdev }}
     <br><br><br>
 
     <h3>Humidity</h3>
@@ -68,38 +118,5 @@
 
     Standard deviation:
         {{ storm_glass_summary.pressure.stdev }} <br><br><br>
-
-    <h3>Wind</h3>
-    Unit: m/s<br><br>
-
-    Speed min: {{ storm_glass_summary.windSpeed.min }} <br>
-
-    Gust min: {{ storm_glass_summary.windGust.min }} <br><br>
-
-    Speed max: {{ storm_glass_summary.windSpeed.max }} <br>
-
-    Gust max:  {{ storm_glass_summary.windGust.max }} <br><br>
-
-    Speed average: {{ storm_glass_summary.windSpeed.avg }} <br>
-
-    Gust average: {{ storm_glass_summary.windGust.avg }} <br><br>
-
-    Speed standard deviation:
-    {{ storm_glass_summary.windSpeed.stdev }} <br>
-
-    Gust standard deviation:
-    {{ storm_glass_summary.windGust.stdev }} <br>
-
-    <h3>Visibility</h3>
-    Unit: kilometers<br><br>
-
-    Min: {{ storm_glass_summary.visibility.min }} <br><br>
-
-    Max: {{ storm_glass_summary.visibility.max }} <br><br>
-
-    Average: {{ storm_glass_summary.visibility.avg }} <br><br>
-
-    Standard deviation:
-        {{ storm_glass_summary.visibility.stdev }} <br><br><br>
 
 {% endblock %}

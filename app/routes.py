@@ -21,7 +21,10 @@ def results():
     lat, lng, date_from, date_to = parse_form(session["form"])
 
     storm_glass_api = StormGlassAPI(config.storm_glass_key)
+    # storm_glass_results = storm_glass_api.request(lat, lng, date_from, date_to)
     storm_glass_results = storm_glass_api.request(lat, lng, date_from, date_to)
+
+    print(storm_glass_results)
     storm_glass_summary = get_summary(storm_glass_results)
 
     date_from = date_from.strftime("%d/%m/%Y")

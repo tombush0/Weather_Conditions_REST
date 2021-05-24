@@ -40,7 +40,7 @@ class StormGlassAPI:
         self.headers = {"Authorization": key}
         self.params = ','.join(
             ["airTemperature", "pressure", "cloudCover", "gust", "humidity",
-             "precipitation", "visibility", "windSpeed"]),
+             "precipitation", "visibility", "windSpeed", "waterTemperature"]),
 
     def request(self, lat, lng, date_from, date_to):
         params = {"lat": lat, "lng": lng, "params": self.params}
